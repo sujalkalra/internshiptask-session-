@@ -1,0 +1,124 @@
+:root{
+  --bg:#f6f8fb;
+  --card:#ffffff;
+  --muted:#6b7280;
+  --accent:#0ea5a4;
+  --primary:#0369a1;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg, var(--bg), #ffffff);
+  color:#0f172a;
+}
+.container{
+  display:flex;
+  min-height:100vh;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+.card{
+  width:900px;
+  max-width:95%;
+  background:var(--card);
+  border-radius:14px;
+  padding:28px;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.08);
+  text-align:center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(148, 163, 184, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.12);
+  border-color: var(--primary);
+}
+
+.card-header {
+  padding: 24px 24px 0;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.card-body {
+  padding: 24px;
+}
+
+.card-footer {
+  padding: 0 24px 24px;
+  border-top: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Enhanced Card Variations */
+.card-primary {
+  border-left: 4px solid var(--primary);
+}
+
+.card-success {
+  border-left: 4px solid #10b981;
+}
+
+.card-warning {
+  border-left: 4px solid #f59e0b;
+}
+
+.card-error {
+  border-left: 4px solid #ef4444;
+}
+
+/* Glassmorphism Effect */
+.card-glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+[data-theme="dark"] .card-glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+h1{margin:0 0 10px;font-size:24px}
+.muted{color:var(--muted);margin-bottom:18px}
+.btn{
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:8px;
+  border: none;
+  cursor:pointer;
+  font-weight:600;
+  background:#e2e8f0;
+}
+.btn.primary{
+  background:var(--primary);
+  color:white;
+  padding:12px 18px;
+  font-size:15px;
+}
+.btn:active{transform:translateY(1px)}
+.session-area{margin-top:18px;text-align:left}
+.hidden{display:none}
+.success{color:green;font-weight:600}
+.video-wrap{
+  margin-top:18px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  align-items:center;
+}
+.video-controls{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  justify-content:center;
+  margin-top:6px;
+}
+label{font-size:14px;color:var(--muted)}
+input[type="range"]{vertical-align:middle}
+a{color:var(--accent)}
+@media (max-width:860px){
+  .card{padding:18px}
+  video{width:100% !important}
+}

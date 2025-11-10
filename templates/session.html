@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Live Session</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <section class="card">
+      {% if error %}
+        <h2>Error</h2>
+        <p class="muted">{{ error }}</p>
+      {% else %}
+        <h1>Student View</h1>
+        <p class="muted">Session ID: <strong>{{ unique_id }}</strong></p>
+
+        <div class="video-wrap">
+          <video id="studentVideo" controls playsinline width="800" preload="metadata">
+            <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+          <div class="video-controls">
+            <label>Volume
+              <input id="vol" type="range" min="0" max="1" step="0.01" value="1">
+            </label>
+            <button id="fsBtn" class="btn">Fullscreen</button>
+          </div>
+        </div>
+
+      {% endif %}
+    </section>
+  </main>
+
+  <script>
+    // small inline init for student page
+    document.addEventListener("DOMContentLoaded", function() {
+      const vol = document.getElementById("vol");
+      const vid = document.getElementById("studentVideo");
+      const fs = document.getElementById("fsBtn");
+      vol && vol.addEventListener("input", () => vid.volume = vol.value);
+      fs && fs.addEventListener("click", () => {
+        if (vid.requestFullscreen) vid.requestFullscreen();
+        else if (vid.webkitEnterFullscreen) vid.webkitEnterFullscreen();
+      });
+    });
+  </script>
+</body>
+</html>
