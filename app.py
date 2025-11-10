@@ -163,7 +163,7 @@ def join_session(unique_id):
 # helper function to build base URL dynamically
 def get_base_url():
     # for local run
-    return "http://localhost:5000"
+    return "https://internshiptask-session-git-main-sujals-projects-d94491da.vercel.app/"
 
 
 # main app runner
